@@ -1,0 +1,34 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: accessrequest-client-role
+rules:
+- apiGroups:
+  - cr.requests.test
+  resources:
+  - accessrequests
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+- apiGroups:
+  - cr.requests.test
+  resources:
+  - accessrequests/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: accessrequest-client-role
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: accessrequest-client-role
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: system:anonymous

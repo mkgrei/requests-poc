@@ -1,0 +1,6 @@
+apiVersion: cr.requests.test/v1beta1
+kind: AccessRequest
+metadata:
+  name: accessrequest-sample
+spec:
+  # TODO(user): Add fields here

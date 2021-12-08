@@ -1,0 +1,16 @@
+domain: requests.test
+layout:
+- go.kubebuilder.io/v3
+projectName: requests-poc
+repo: mkgrei/requests-poc
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: requests.test
+  group: cr
+  kind: AccessRequest
+  path: mkgrei/requests-poc/api/v1beta1
+  version: v1beta1
+version: "3"

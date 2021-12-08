@@ -1,0 +1,20 @@
+# permissions for end users to view accessrequests.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: accessrequest-viewer-role
+rules:
+- apiGroups:
+  - cr.requests.test
+  resources:
+  - accessrequests
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cr.requests.test
+  resources:
+  - accessrequests/status
+  verbs:
+  - get
